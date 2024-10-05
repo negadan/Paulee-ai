@@ -1,0 +1,11 @@
+<ActionBar title="My Policies"></ActionBar>
+
+<ListView [items]="policies" class="list-group">
+  <ng-template let-policy="item">
+    <StackLayout class="list-group-item" (tap)="onPolicyTap(policy)">
+      <Label [text]="policy.type" class="h2"></Label>
+      <Label [text]="'Insurer: ' + policy.insurer" class="body"></Label>
+      <Label [text]="'Policy Number: ' + policy.policyNumber" class="body"></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>

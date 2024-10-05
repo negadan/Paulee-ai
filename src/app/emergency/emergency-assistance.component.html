@@ -1,0 +1,22 @@
+<ActionBar title="Emergency Assistance"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4">
+    <Label text="Emergency Contacts" class="h1 mb-4"></Label>
+    
+    <ListView [items]="policies" class="list-group">
+      <ng-template let-policy="item">
+        <StackLayout class="list-group-item">
+          <Label [text]="policy.type + ' - ' + policy.insurer" class="h2"></Label>
+          <Button text="Call Insurance Company" (tap)="onCallTap('1234567890')" class="btn btn-primary mt-2"></Button>
+        </StackLayout>
+      </ng-template>
+    </ListView>
+    
+    <StackLayout class="mt-4">
+      <Label text="Emergency Services" class="h2 mb-2"></Label>
+      <Button text="Call 911" (tap)="onCallTap('911')" class="btn btn-danger mb-2"></Button>
+      <Button text="Call Roadside Assistance" (tap)="onCallTap('1800123456')" class="btn btn-info"></Button>
+    </StackLayout>
+  </StackLayout>
+</ScrollView>

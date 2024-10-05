@@ -1,0 +1,20 @@
+<ActionBar title="Policy Details"></ActionBar>
+
+<ScrollView>
+  <StackLayout class="p-4" *ngIf="policy">
+    <Label [text]="policy.type" class="h1 mb-2"></Label>
+    <Label [text]="'Insurer: ' + policy.insurer" class="body mb-1"></Label>
+    <Label [text]="'Policy Number: ' + policy.policyNumber" class="body mb-1"></Label>
+    <Label [text]="'Coverage Amount: $' + policy.coverageAmount" class="body mb-1"></Label>
+    <Label [text]="'Premium: $' + policy.premium" class="body mb-1"></Label>
+    <Label [text]="'Start Date: ' + policy.startDate.toDateString()" class="body mb-1"></Label>
+    <Label [text]="'End Date: ' + policy.endDate.toDateString()" class="body mb-1"></Label>
+    
+    <Label text="Documents:" class="h2 mt-4 mb-2"></Label>
+    <ListView [items]="policy.documents" class="list-group">
+      <ng-template let-document="item">
+        <Label [text]="document" class="list-group-item"></Label>
+      </ng-template>
+    </ListView>
+  </StackLayout>
+</ScrollView>

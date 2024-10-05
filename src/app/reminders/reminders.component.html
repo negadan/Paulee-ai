@@ -1,0 +1,10 @@
+<ActionBar title="Reminders"></ActionBar>
+
+<ListView [items]="reminders" class="list-group">
+  <ng-template let-reminder="item">
+    <StackLayout class="list-group-item">
+      <Label [text]="reminder.policy.type + ' - ' + reminder.policy.insurer" class="h2"></Label>
+      <Label [text]="'Expires in ' + reminder.daysUntilExpiry + ' days'" class="body text-danger"></Label>
+    </StackLayout>
+  </ng-template>
+</ListView>
